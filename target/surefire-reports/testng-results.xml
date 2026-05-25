@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-05-25T11:32:30 IST" name="Surefire suite" finished-at="2026-05-25T11:32:39 IST" duration-ms="8686">
+    <groups>
+    </groups>
+    <test started-at="2026-05-25T11:32:30 IST" name="Surefire test" finished-at="2026-05-25T11:32:39 IST" duration-ms="8686">
+      <class name="specs.ConsultationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:specs.ConsultationTest@22e357dc]" started-at="2026-05-25T11:32:30 IST" name="setUp" finished-at="2026-05-25T11:32:32 IST" duration-ms="1283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="bookingConsultationShouldShowSuccessMessage()[pri:0, instance:specs.ConsultationTest@22e357dc]" started-at="2026-05-25T11:32:32 IST" name="bookingConsultationShouldShowSuccessMessage" finished-at="2026-05-25T11:32:39 IST" duration-ms="7282" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookingConsultationShouldShowSuccessMessage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:specs.ConsultationTest@22e357dc]" started-at="2026-05-25T11:32:39 IST" name="tearDown" finished-at="2026-05-25T11:32:39 IST" duration-ms="107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- specs.ConsultationTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
