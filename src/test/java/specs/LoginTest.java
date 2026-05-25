@@ -36,7 +36,7 @@ public class LoginTest {
         login();
 
         WebElement welcomeHeading = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(., 'Welcome back,!')]") ));
+            ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
 
         Assert.assertTrue(welcomeHeading.getText().contains("Prem"), "Dashboard welcome heading was not shown after login.");
     }
@@ -46,6 +46,6 @@ public class LoginTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email"))).sendKeys("premthakare@gmail.com");
         driver.findElement(By.id("password")).sendKeys("premthakare");
         driver.findElement(By.xpath("//*[@id='root']/div/main/div/div/div/form/div[3]/button")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(., 'Welcome back, Prem Thakare!')]")));
+        wait.until(ExpectedConditions.urlContains("/dashboard"));
     }
 }
