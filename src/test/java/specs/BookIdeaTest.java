@@ -13,29 +13,29 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class BookIdea {
+public class BookIdeaTest {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
+private WebDriver driver;
+private WebDriverWait wait;
 
-    @BeforeMethod
-    public void setUp() {
+@BeforeMethod
+public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-    }
+}
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() {
+@AfterMethod(alwaysRun = true)
+public void tearDown() {
         if (driver != null) {
-            driver.quit();
+        driver.quit();
         }
-    }
+}
 
-    @Test
-    public void bookIdeaRecommendation() {
+@Test
+public void bookIdeaRecommendation() {
 
         login();
 
@@ -68,15 +68,15 @@ public class BookIdea {
         wait.until(ExpectedConditions.elementToBeClickable(card));
 
         try {
-            card.click();
+        card.click();
         } catch (Exception e) {
             // Fallback for React applications
-            ((JavascriptExecutor) driver)
-                    .executeScript("arguments[0].click();", card);
+        ((JavascriptExecutor) driver)
+        .executeScript("arguments[0].click();", card);
         }
 
         // Wait for details page
-       By bookNowButton = By.xpath("//button[contains(.,'Book Now')]");
+By bookNowButton = By.xpath("//button[contains(.,'Book Now')]");
 
 WebElement btn = wait.until(
         ExpectedConditions.presenceOfElementLocated(bookNowButton));
@@ -88,9 +88,9 @@ wait.until(ExpectedConditions.elementToBeClickable(btn));
 
 ((JavascriptExecutor) driver)
         .executeScript("arguments[0].click();", btn);
-    }
+}
 
-    private void login() {
+private void login() {
 
         driver.get("http://localhost:5173/login");
 
@@ -109,5 +109,5 @@ wait.until(ExpectedConditions.elementToBeClickable(btn));
         wait.until(ExpectedConditions.urlContains("/dashboard"));
 
         System.out.println("Login successful.");
-    }
+}
 }

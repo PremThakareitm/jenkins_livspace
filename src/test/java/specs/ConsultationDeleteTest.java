@@ -13,27 +13,27 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ConsultationDelete {
+public class ConsultationDeleteTest {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
+private WebDriver driver;
+private WebDriverWait wait;
 
-    @BeforeMethod
-    public void setUp() {
+@BeforeMethod
+public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-    }
+}
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() {
+@AfterMethod(alwaysRun = true)
+public void tearDown() {
         if (driver != null) {
-            driver.quit();
+driver.quit();
         }
-    }
+}
 
-    @Test
-    public void deleteConsultation() {
+@Test
+public void deleteConsultation() {
 
         login();
 
@@ -66,9 +66,9 @@ public class ConsultationDelete {
         wait.until(ExpectedConditions.not(ExpectedConditions.alertIsPresent()));
 
         System.out.println("Consultation deleted successfully.");
-    }
+}
 
-    private void login() {
+private void login() {
         driver.get("http://localhost:5173/login");
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
@@ -82,5 +82,5 @@ public class ConsultationDelete {
                 .click();
 
         wait.until(ExpectedConditions.urlContains("/dashboard"));
-    }
+}
 }
