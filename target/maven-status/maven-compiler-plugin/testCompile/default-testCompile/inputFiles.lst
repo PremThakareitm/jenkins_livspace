@@ -1,2 +1,6 @@
-/Users/premthakare/Desktop/Seleium_Test/seleium_test/src/test/java/specs/ConsultationTest.java
-/Users/premthakare/Desktop/Seleium_Test/seleium_test/src/test/java/specs/LoginTest.java
+/Users/premthakare/Desktop/QA/Selenium_Test/jenkins_livspace/src/test/java/specs/BookIdea.java
+/Users/premthakare/Desktop/QA/Selenium_Test/jenkins_livspace/src/test/java/specs/ConsultationAdd.java
+/Users/premthakare/Desktop/QA/Selenium_Test/jenkins_livspace/src/test/java/specs/ConsultationDelete.java
+/Users/premthakare/Desktop/QA/Selenium_Test/jenkins_livspace/src/test/java/specs/GetVisualizer.java
+/Users/premthakare/Desktop/QA/Selenium_Test/jenkins_livspace/src/test/java/specs/LoginTest.java
+/Users/premthakare/Desktop/QA/Selenium_Test/jenkins_livspace/src/test/java/specs/ProfileDashboard.java

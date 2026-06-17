@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest {
+public class ProfileDashboard {
+    
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -32,13 +32,32 @@ public class LoginTest {
     }
 
     @Test
-    public void loginShouldOpenDashboard() {
+    public void updateProfile() {
+
         login();
 
-        WebElement welcomeHeading = wait.until(
-            ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
+        // Click first navigation link
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//*[@id='root']/div/header/div/div/nav/div/a[1]")))
+                .click();
 
-        Assert.assertTrue(welcomeHeading.getText().contains("Welcome back,"));
+        // Click edit/add profile button
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//*[@id='root']/div/main/div/div/div/div/div[1]/div[3]/button")))
+                .click();
+
+        // Enter surname
+        WebElement surnameField = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.xpath("//*[@id='root']/div/main/div/div/div/div/div[2]/form/div[1]/h2/input")));
+
+        surnameField.clear();
+        surnameField.sendKeys("Thakare");
+
+        // Click save button
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//*[@id='root']/div/main/div/div/div/div/div[1]/div[3]/button[1]")))
+                .click();
     }
 
     private void login() {
@@ -47,5 +66,6 @@ public class LoginTest {
         driver.findElement(By.id("password")).sendKeys("premthakare");
         driver.findElement(By.xpath("//*[@id='root']/div/main/div/div/div/form/div[3]/button")).click();
         wait.until(ExpectedConditions.urlContains("/dashboard"));
+        
     }
 }
